@@ -1,0 +1,160 @@
+[Samurai X2SoldierClassTemplate]
++DisplayName="Samurai"
++ClassSummary="El camino del Samurai se encuentra en la muerte. La meditación sobre la muerte es inevitable, es algo diario. Todos los días cuando el cuerpo y mente están en paz, uno puede meditar sobre ser alcanzado por flechas, rifles, lanzas y espadas, dejarse llevar por las olas, meterse en un gran incendio, ser alcanzado por un rayo, ser sacudido por un terremoto, caer desde acantilados de mil pies, morir de enfermedad o hacer Harakiri por la muerte de un maestro. Y todos los días sin falta se puede considerar a sí mismo un muerto. Esa es la esencia del camino del Samurai."
++LeftAbilityTreeTitle="Kensai"
++RightAbilityTreeTitle="Ronin"
+
++RandomNickNames[0]="Kensai"
++RandomNickNames[1]="Ronin"
++RandomNickNames[2]="Shogun"
++RandomNickNames[3]="Slice"
++RandomNickNames[4]="Cherry Blossom"
++RandomNickNames[5]="Bokken"
++RandomNickNames[6]="Zen"
++RandomNickNames[7]="Blade"
++RandomNickNames[8]="Mountain Storm"
++RandomNickNames[9]="Heavy Rain"
++RandomNickNames[10]="Cloud Dancer"
++RandomNickNames[11]="Grass Cutter"
++RandomNickNames[12]="Honor"
++RandomNickNames[13]="Sudden Death"
++RandomNickNames[14]="Stalker"
++RandomNickNames[14]="Bushido"
+
+[HawkEye X2SoldierAbilityUnlockTemplate]
+DisplayName="Samurai: Ojo de Halcón"
+Summary="Acorde a lo que dicen los antiguos, tomar a un enemigo en el campo de batalla es como un halcón que toma a un pájaro. <br/>A pesar de estar metido dentro de una bandada de un millar de ellos, ese halcón no presta atención a ningún otro pájaro más que al que ha marcado en primer lugar.<br/>Garantiza +30 puntos a la probabilidad de crítico y +3 puntos de daño crítico a los ataques cuerpo a cuerpo"
+
+[HawkEye X2AbilityTemplate]
+LocFriendlyName="Ojo de Halcón"
+LocLongDescription="Acorde a lo que dicen los antiguos, tomar a un enemigo en el campo de batalla es como un halcón que toma a un pájaro. <br/>A pesar de estar metido dentro de una bandada de un millar de ellos, ese halcón no presta atención a ningún otro pájaro más que al que ha marcado en primer lugar.<br/>Garantiza +30 puntos a la probabilidad de crítico y +3 puntos de daño crítico a los ataques cuerpo a cuerpo"
+LocHelpText="Garantiza +30 puntos a la probabilidad de crítico y +3 puntos de daño crítico a los ataques cuerpo a cuerpo"
+LocFlyOverText="Ojo de Halcón" 
+LocPromotionPopupText="<Bullet/>+30% a la probabilidad de crítico en ataques cuerpo a cuerpo<br/><Bullet/>+3 puntos de daño crítico en ataques cuerpo a cuerpo<br/>"
+
+[WayOfTheSamurai X2AbilityTemplate]
+LocFriendlyName="Camino del Samurai"
+LocLongDescription="El camino del Samurai se encuentra en la muerte. La meditación sobre la muerte es inevitable, es algo diario.<br/>El entrenamiento intensivo en la espada da +3 puntos de daño y +10% de acierto con espadas pero se añade una penalización de -20 a otras armas"
+LocHelpText="+3 puntos de daño y +10% de acierto con espadas<br/>Penalización de -20 en puntería con armas primarias"
+LocFlyOverText="Camino del Samurai" 
+LocPromotionPopupText="<Bullet/>El entrenamiento intensivo en la espada da +3 puntos de daño y +10% de acierto con espadas pero se añade una penalización de -20 a otras armas"
+
+[Unstoppable X2AbilityTemplate]
+LocFriendlyName="Imparable"
+LocLongDescription="En palabras de los antiguos, uno debe tomar su decisión en el plazo de 7 respiraciones.<br/>Es cuestión de estar seguro y tener el espíritu para habrirse paso hasta el otro lado.<br/>Los ataques cuerpo a cuerpo no producen roces"
+LocHelpText="Los ataques cuerpo a cuerpo no producen roces."
+LocFlyOverText="Imparable" 
+LocPromotionPopupText="<Bullet/>Los ataques cuerpo a cuerpo no producen roces."
+
+[MeleeShredder X2AbilityTemplate]
+LocFriendlyName="Foco de Energía"
+LocLongDescription="Concentra toda tu energía en un solo punto. Puedes destrozar armadura con tus ataques cuerpo a cuerpo"
+LocHelpText="Puedes destrozar armadura con tus ataques cuerpo a cuerpo"
+LocFlyOverText="Foco de Energía" 
+LocPromotionPopupText="<Bullet/>Las espadas V1 quitan 1 de armadura<br/><Bullet/>Las espadas V2 quitan 2 de armadura<br/><Bullet/>Las espadas V3 quitan 3 de armadura"
+
+[WhirlwindStrike X2AbilityTemplate]
+LocFriendlyName="Ataque Torbellino"
+LocLongDescription="El camino del Samurai es inmediato, y lo mejor es lanzarse de cabeza.<br/>Haces 2 ataques al objetivo. Cada ataque tiene una penalización de -15 puntos.<br/>Sin enfriamiento."
+LocHelpText="Haces 2 ataques al objetivo. Cada ataque tiene una penalización de -15 puntos.<br/>Sin enfriamiento."
+LocFlyOverText="Haces 2 ataques al objetivo. Cada ataque tiene una penalización de -15 puntos.<br/>Sin enfriamiento." 
+LocPromotionPopupText="<Bullet/>Haces 2 ataques al objetivo. Cada ataque tiene una penalización de -15 puntos.<br/><Bullet/>Sin enfriamiento."
+
+[TrainingDiscipline X2AbilityTemplate]
+LocFriendlyName="Disciplina del Entrenamiento"
+LocLongDescription="<i>La verdadera fuerza es la flor de la sabiduría, pero su semilla es la acción.<i/><br/>El entrenamiento implacable de los Samurais proporciona +3 puntos de Movilidad y +20 puntos de Esquivar."
+LocHelpText="El entrenamiento implacable de los Samurais proporciona +3 puntos de Movilidad y +20 puntos de Esquivar."
+LocFlyOverText="Disciplina del Entrenamiento" 
+LocPromotionPopupText="<Bullet>Grants +3 puntos de Movilidad<br/><Bullet/>Garantiza +20 puntos de Esquivar"
+
+[Yamabushi X2AbilityTemplate]
+LocFriendlyName="Herencia de Yamabushi"
+LocLongDescription="<i>La disciplina del Shugendo busca poderes espirituales, místicos o sobrenaturales obtenidos a través del ascetismo<i/>Eres duro como una montaña y ganas 1 punto de armadura, +15 puntos de Defensa y puedes regenerar 2 puntos de vida por ronda, hasta un máximo de 6."
+LocHelpText="Eres duro como una montaña y ganas 1 punto de armadura, +15 puntos de Defensa y puedes regenerar 2 puntos de vida por ronda, hasta un máximo de 6"
+LocFlyOverText="Herencia de Yamabushi" 
+LocPromotionPopupText="<Bullet>Ganas +2 puntos de armadura<br/><Bullet/>Ganas +15 puntos de Defensa<br/><Bullet/>Regeneras 2 puntos de vida por ronda, hasta un máximo de 6"
+
+[DragonStrike X2AbilityTemplate]
+LocFriendlyName="Ataque del Dragón"
+LocLongDescription="La razón no decide el final; es la espada la que lo hace. Desata un terrible golpe a tu enemigo, que puede hacer daño en área y puede desorientar a los supervivientes"
+LocHelpText="Desata un terrible golpe a tu enemigo, que puede hacer daño en área y puede desorientar a los supervivientes"
+LocFlyOverText="Ataque del Dragón" 
+LocPromotionPopupText="<Bullet>Ataque con un radio de efecto de 5 casillas<br/><Bullet/><Ability:SelfCooldown/> Enfriamiento: 5 turnos"
+
+[DangerSense X2AbilityTemplate]
+LocFriendlyName="Sentido del Peligro"
+LocLongDescription="Puedes estar en calma por fuera, pero por dentro tu mente está alerta y preparada. Los Samurais pueden sentir movimientos en un radio de 20 casillas alrededor de ellos. No pueden ser sorprendidos por un Sin Cara o por Crisálidas escondidas."
+LocHelpText="Los Samurais pueden sentir movimientos en un radio de 20 casillas alrededor de ellos. No pueden ser sorprendidos por un Sin Cara o por Crisálidas escondidas."
+LocFlyOverText="Sentido del Peligro"
+LocPromotionPopupText="<Bullet/>Detecta movimientos en un radio de 20 casillas. No puede ser sorprendido por un Sin Cara o por Crisálidas escondidas<br/>"
+
+[SamuraiFrenzy X2AbilityTemplate]
+LocFriendlyName="Shigurui"
+LocLongDescription="Incluso si la cabeza fuera a ser repentinamente cortada, se debería poder hacer una acción más con certeza. Con valor marcial, si uno se convierte en un fantasma vengativo y muestra su gran determinación, aunque la cabeza sea cortada, no morirá.<br/>Cuando el Samurai es herido en batalla entra en un estado de frenesí de la muerte que le da 1 punto de acción adicional, +80 puntos de Esquivar y +50 a la probabilidad de crítico (solo cuerpo a cuerpo) durante 2 rondas."
+LocHelpText="Cuando el Samurai es herido en batalla entra en un estado de frenesí de la muerte que le da 1 punto de acción adicional, +80 puntos de Esquivar y +50 a la probabilidad de crítico (solo cuerpo a cuerpo) durante 2 rondas."
+LocFlyOverText="Frenesí de Muerte Shigurui"
+LocPromotionPopupText="<Bullet/>Cuando está herido gana 1 punto de acción adicional por 2 rondas.<br/><Bullet/>+80 puntos de Esquivar.<br/><Bullet/>+50 a la probabilidad de crítico (solo cuerpo a cuerpo)"
+
+[SamuraiBladestorm X2AbilityTemplate]
+LocFriendlyName="Tormenta de Espadas"
+LocLongDescription="Ataque gratuito de espada contra enemigos que entren en rango cuerpo a cuerpo."
+LocHelpText="Ataque gratuito de espada contra enemigos que entren en rango cuerpo a cuerpo."
+LocFlyOverText="Tormenta de Espadas"
+LocPromotionPopupText="<Bullet/> Si un enemigo empieza su turno en una casilla adyacente, Tormenta de Espadas se activará si ese enemigo ataca al Samurai.<br/><Bullet/> Si el enemigo no empieza su turno en una casilla adyacente, entonces Tormenta de Espadas se activará cuando ese enemigo se acerque en rango cuerpo a cuerpo.<br/>"
+
+[SamuraiBladestormAttack X2AbilityTemplate]
+LocFriendlyName="Tormenta de Espadas"
+LocLongDescription="Ataque gratuito de espada contra enemigos que entren en rango cuerpo a cuerpo."
+LocHelpText="Ataque gratuito de espada contra enemigos que entren en rango cuerpo a cuerpo."
+LocFlyOverText="Tormenta de Espadas"
+LocPromotionPopupText="<Bullet/> Si un enemigo empieza su turno en una casilla adyacente, Tormenta de Espadas se activará si ese enemigo ataca al Samurai.<br/><Bullet/> Si el enemigo no empieza su turno en una casilla adyacente, entonces Tormenta de Espadas se activará cuando ese enemigo se acerque en rango cuerpo a cuerpo.<br/>"
+
+[SamuraiUntouchable X2AbilityTemplate]
+LocFriendlyName="Intocable"
+LocLongDescription="Si consigues matar en tu turno, el siguiente ataque que haga el enemigo contra tí fallará."
+LocHelpText="Si consigues matar en tu turno, el siguiente ataque que haga el enemigo contra tí fallará."
+LocFlyOverText="Intocable"
+LocPromotionPopupText="<Bullet/> Cuando Intocable se activa, el Samurai es inmune al primer ataque que reciba en el turno del enemigo.<br/>"
+
+[SamuraiReaper X2AbilityTemplate]
+LocFriendlyName="Segador"
+LocLongDescription="Una devastadora cadena de ataques cuerpo a cuerpo donde el primer golpe no puede fallar. Cada baja en modo Segador garantiza una acción extra, pero cada vez se irá reduciendo el daño."
+LocHelpText="Una devastadora cadena de ataques cuerpo a cuerpo donde el primer golpe no puede fallar. Cada baja en modo Segador garantiza una acción extra, pero cada vez se irá reduciendo el daño."
+LocFlyOverText="Segador"
+LocPromotionPopupText="<Bullet/> Segador tiene <Ability:SelfCooldown/> turnos de enfriamiento.<br/><Bullet/> Segador no puede combinarse con Correr y Disparar.<br/><Bullet/> El daño hecho con cada baja con éxito se va reduciendo, hay que tener cuidado y calcular bien para hacer la cadena lo más grande posible.<br/>"
+
+[SamuraiImplacable X2AbilityTemplate]
+LocFriendlyName="Implacable"
+LocLongDescription="Si consigues una o más bajas en tu turno, tienes garantizado un movimiento adicional."
+LocHelpText="Ganas un movimiento adicional después de hacer una baja."
+LocFlyOverText="Implacable"
+LocPromotionPopupText="<Bullet/> La habilidad de Corte del Samurai no puede ser usada después de obtener el bonus Implacable.<br/>"
+
+[Shinigami X2AbilityTemplate]
+LocFriendlyName="Shinigami"
+LocLongDescription="\"Hoy soy la muerte\" Nuestros científicos no están seguros de por qué el Samurai es mucho más rápido que los demás soldados comunes. Dicen que es una habilidad psionica que absorbe la energía de los enemigos caídos. Cada vez que matas a un enemigo en cuerpo a cuerpo recolectas su alma. Cada dos almas se garantiza una carga de Shinigami para aumentar tus puntos de acción. <br/>Por cada 10 almas que recolectes en total ganas +1 a la probabilidad de crítico y por cada 20 almas +1 punto de daño crítico (solo ataques cuerpo a cuerpo, basado en la cuenta de bajas cuerpo a cuerpo de todas las batallas que has realizado desde que esta habilidad es añadida)"
+LocHelpText="Por cada 10 almas que recolectes en total ganas +1 a la probabilidad de crítico y por cada 20 almas +1 punto de daño crítico (solo ataques cuerpo a cuerpo, basado en la cuenta de bajas cuerpo a cuerpo de todas las batallas que has realizado desde que esta habilidad es añadida)"
+LocFlyOverText="Shinigami"
+LocPromotionPopupText="<Bullet/>Cada vez que matas a un enemigo en cuerpo a cuerpo recolectas su alma. Cada dos almas se garantiza una carga de Shinigami para aumentar tus puntos de acción.<br/><Bullet/>Activar Shinigami no tiene coste, si no te has movido en este turno.<br /><Bullet/>Por cada 10 almas que recolectes en total ganas +1 a la probabilidad de crítico y por cada 20 almas +1 punto de daño crítico (solo ataques cuerpo a cuerpo, basado en la cuenta de bajas cuerpo a cuerpo de todas las batallas que has realizado desde que esta habilidad es añadida)"
+LocHelpText="Por cada 10 almas que recolectes en total ganas +1 a la probabilidad de crítico y por cada 20 almas +1 punto de daño crítico (solo ataques cuerpo a cuerpo, basado en la cuenta de bajas cuerpo a cuerpo de todas las batallas que has realizado desde que esta habilidad es añadida)"
+
+[SamuraiSoulSteal X2AbilityTemplate]
+LocFriendlyName="Shinigami"
+LocLongDescription="\"Hoy soy la muerte\" Nuestros científicos no están seguros de por qué el Samurai es mucho más rápido que los demás soldados comunes. Dicen que es una habilidad psionica que absorbe la energía de los enemigos caídos. Cada vez que matas a un enemigo en cuerpo a cuerpo recolectas su alma. Cada dos almas se garantiza una carga de Shinigami para aumentar tus puntos de acción"
+LocHelpText="Cada vez que matas a un enemigo en cuerpo a cuerpo recolectas su alma. Cada dos almas se garantiza una carga de Shinigami para aumentar tus puntos de acción. Activar Shinigami no tiene coste, si no te has movido en este turno."
+LocFlyOverText="Shinigami"
+LocPromotionPopupText="<Bullet/>Cada vez que matas a un enemigo en cuerpo a cuerpo recolectas su alma. Cada dos almas se garantiza una carga de Shinigami para aumentar tus puntos de acción.<br/>"
+
+[SamuraiSoulStealConsumeSoul X2AbilityTemplate]
+LocFriendlyName="Shinigami"
+LocLongDescription="Consume un alma para obtener un punto de acción extra. Puede usarse múltiples veces como una acción sin coste."
+LocHelpText="Consume un alma para obtener un punto de acción extra. Puede usarse múltiples veces como una acción sin coste si no te has movido en este turno."
+LocFlyOverText="Shinigami"
+LocPromotionPopupText="<Bullet/>Consume un alma para obtener un punto de acción extra.<br/><Bullet/>Puede usarse múltiples veces como una acción sin coste si no te has movido en este turno.
+
+[SamuraiLightningReflexes X2AbilityTemplate]
+LocFriendlyName="Reflejos Relámpago"
+LocLongDescription="La probabilidad de acierto en disparos de reacción contra esta unidad se reduce un 90% en el primer disparo y un 70% en los disparos adicionales."
+LocHelpText="La probabilidad de acierto en disparos de reacción contra esta unidad se reduce un 90% en el primer disparo y un 70% en los disparos adicionales."
+LocFlyOverText="Reflejos Relámpago"
+LocPromotionPopupText="La probabilidad de acierto en disparos de reacción contra esta unidad se reduce un 90% en el primer disparo y un 70% en los disparos adicionales."
