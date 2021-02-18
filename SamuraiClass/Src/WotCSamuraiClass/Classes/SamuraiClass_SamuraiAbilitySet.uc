@@ -60,6 +60,7 @@ static function array<X2DataTemplate> CreateTemplates()
 	Templates.AddItem(AddUnstoppableAbility());
 	Templates.AddItem(AddMeleeShredderAbility());
 	Templates.AddItem(AddWhirlwindStrikeAbility());
+	Templates.AddItem(WhirlwindFirstStrike());
 	Templates.AddItem(WhirlwindSecondStrike());
 	Templates.AddItem(TrainingDiscipline());
 	Templates.AddItem(Yamabushi());
@@ -151,21 +152,23 @@ static function X2AbilityTemplate SwordThrust()
 	//
 	Template.SourceMissSpeech = 'SwordMiss';
 
-	Template.CustomFireAnim = 'FF_MeleeThrustA';
-	Template.CustomFireKillAnim = 'FF_MeleeThrustA';
-	Template.CustomMovingFireAnim = 'MV_MeleeThrustA';
-	Template.CustomMovingFireKillAnim =  'MV_MeleeThrustA';
-	Template.CustomMovingTurnLeftFireAnim = 'MV_RunTurn90LeftMeleeThrustA';
-	Template.CustomMovingTurnLeftFireKillAnim = 'MV_RunTurn90LeftMeleeThrustA';
-	Template.CustomMovingTurnRightFireAnim = 'MV_RunTurn90RightMeleeThrustA';
-	Template.CustomMovingTurnRightFireKillAnim = 'MV_RunTurn90RightMeleeThrustA';
+	//Template.CustomFireAnim = 'FF_MeleeThrustA';
+	//Template.CustomFireKillAnim = 'FF_MeleeThrustA';
+	//Template.CustomMovingFireAnim = 'MV_MeleeThrustA';
+	//Template.CustomMovingFireKillAnim =  'MV_MeleeThrustA';
+	//Template.CustomMovingTurnLeftFireAnim = 'MV_RunTurn90LeftMeleeThrustA';
+	//Template.CustomMovingTurnLeftFireKillAnim = 'MV_RunTurn90LeftMeleeThrustA';
+	//Template.CustomMovingTurnRightFireAnim = 'MV_RunTurn90RightMeleeThrustA';
+	//Template.CustomMovingTurnRightFireKillAnim = 'MV_RunTurn90RightMeleeThrustA';
 
 	Template.SuperConcealmentLoss = class'X2AbilityTemplateManager'.default.SuperConcealmentStandardShotLoss;
 	Template.ChosenActivationIncreasePerUse = class'X2AbilityTemplateManager'.default.StandardShotChosenActivationIncreasePerUse;
 	Template.LostSpawnIncreasePerUse = class'X2AbilityTemplateManager'.default.MeleeLostSpawnIncreasePerUse;
 	Template.bFrameEvenWhenUnitIsHidden = true;
 
-	Template.AdditionalAbilities.AddItem('SwordThrustAnimSet');
+	//Template.AdditionalAbilities.AddItem('SwordThrustAnimSet');
+	// Added by the dual wield melee mod
+	//Template.AdditionalAbilities.AddItem('DualSwordThrustAnimSet');
 
 	return Template;
 }
@@ -189,7 +192,7 @@ static function X2AbilityTemplate SwordThrustAnimSet()
 
 	AnimSets = new class'X2Effect_AdditionalAnimSets';
 	AnimSets.EffectName = 'SwordThrustAnimsets';
-	AnimSets.AddAnimSetWithPath("SamuraiAnimations.Anims.AS_SwordThrurst");
+	//AnimSets.AddAnimSetWithPath("SamuraiAnimations.Anims.AS_SwordThrurst");
 	AnimSets.BuildPersistentEffect(1, true, false, false, eGameRule_TacticalGameStart);
 	AnimSets.DuplicateResponse = eDupe_Ignore;
 	Template.AddTargetEffect(AnimSets);
@@ -377,6 +380,7 @@ static function X2AbilityTemplate WayOfTheSamurai()
 	DamageEffect = new class'X2Effect_BonusWeaponDamage';
 	DamageEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.GetMyHelpText(), Template.IconImage, false);
 	DamageEffect.BonusDmg = default.WAYOFTHESAMURAI_DAMAGE;
+	DamageEffect.DuplicateResponse = eDupe_Ignore;
 	DamageEffect.BuildPersistentEffect(1, true, false, false);
 	Template.AddTargetEffect(DamageEffect);
 
@@ -384,10 +388,12 @@ static function X2AbilityTemplate WayOfTheSamurai()
 	HitBonusEffect = new class'X2Effect_ToHitModifier';
 	HitBonusEffect.EffectName = 'WayOfTheSamuraiHitBonus';
 	HitBonusEffect.BuildPersistentEffect(1, true, false, false);
-	HitBonusEffect.DuplicateResponse = eDupe_Refresh;
 	HitBonusEffect.AddEffectHitModifier(eHit_Success, default.WAYOFTHESAMURAI_HIT, Template.LocFriendlyName, class'X2AbilityToHitCalc_StandardMelee', true, false);
 	HitBonusEffect.SetDisplayInfo(ePerkBuff_Passive, Template.LocFriendlyName, Template.LocHelpText, Template.IconImage,,,Template.AbilitySourceName);
+	HitBonusEffect.DuplicateResponse = eDupe_Ignore;
 	Template.AddTargetEffect(HitBonusEffect);
+
+	Template.bShowActivation = false;
 
 	Template.BuildNewGameStateFn = TypicalAbility_BuildGameState;
 	//  NOTE: No visualization on purpose!
@@ -395,8 +401,20 @@ static function X2AbilityTemplate WayOfTheSamurai()
 	return Template;
 }
 
-//******** Whirlwind Strike Ability ********
 static function X2AbilityTemplate AddWhirlwindStrikeAbility()
+{
+	local X2AbilityTemplate					Template;
+	Template = PurePassive('WhirlwindStrike', , , 'eAbilitySource_Perk', false);
+	Template.IconImage = "img:///UILibrary_PerkIcons.UIPerk_chryssalid_slash";
+
+	Template.AdditionalAbilities.AddItem('WhirlwindFirstStrike');
+	//Template.AdditionalAbilities.AddItem('DualWhirlwhindStrike');
+
+	return Template;
+}
+
+//******** Whirlwind Strike Ability ********
+static function X2AbilityTemplate WhirlwindFirstStrike()
 {
 	local X2AbilityTemplate					Template;
 	local X2AbilityCost_ActionPoints		ActionPointCost;
@@ -406,7 +424,7 @@ static function X2AbilityTemplate AddWhirlwindStrikeAbility()
 	local X2Effect_AdditionalAnimSets		AnimSets;
 	local X2AbilityCost_Focus				FocusCost;
 
-	`CREATE_X2ABILITY_TEMPLATE(Template, 'WhirlwindStrike');
+	`CREATE_X2ABILITY_TEMPLATE(Template, 'WhirlwindFirstStrike');
 
 	FocusCost = new class'X2AbilityCost_Focus';
 	FocusCost.FocusAmount = default.WHIRLWINDSTRIKE_FOCUS_COST;
@@ -875,8 +893,8 @@ static function X2AbilityTemplate AddDragonStrikeAbility()
 	// Radius target for the world damage
 	RadiusMultiTarget = new class'X2AbilityMultiTarget_Radius';
 	RadiusMultiTarget.fTargetRadius = default.DRAGONSTRIKE_RADIUS;
+	RadiusMultiTarget.bIgnoreBlockingCover = true;
 	Template.AbilityMultiTargetStyle = RadiusMultiTarget;
-
 
 	Template.bAllowBonusWeaponEffects = true;
 	Template.bSkipMoveStop = true;
@@ -902,12 +920,22 @@ static function X2AbilityTemplate AddDragonStrikeAbility()
 
 	Template.AddMultiTargetEffect(class'X2StatusEffects'.static.CreateDisorientedStatusEffect(true));
 	
+	Template.CustomFireAnim = 'FF_MeleeDragonStrikeA';
+	Template.CustomFireKillAnim = 'FF_MeleeDragonStrikeA';
+	Template.CustomMovingFireAnim = 'FF_MeleeDragonStrikeA';
+	Template.CustomMovingFireKillAnim = 'FF_MeleeDragonStrikeA';
+	Template.CustomMovingTurnLeftFireAnim = 'FF_MeleeDragonStrikeA';
+	Template.CustomMovingTurnLeftFireKillAnim = 'FF_MeleeDragonStrikeA';
+	Template.CustomMovingTurnRightFireAnim = 'FF_MeleeDragonStrikeA';
+	Template.CustomMovingTurnRightFireKillAnim = 'FF_MeleeDragonStrikeA';
+
 	// Voice events
 	//
 	Template.SourceMissSpeech = 'SwordMiss';
 
 	Template.BuildNewGameStateFn = TypicalMoveEndAbility_BuildGameState;
-	Template.BuildInterruptGameStateFn = TypicalMoveEndAbility_BuildInterruptGameState;
+	Template.BuildVisualizationFn = TypicalAbility_BuildVisualization;
+	//Template.BuildInterruptGameStateFn = TypicalMoveEndAbility_BuildInterruptGameState;
 
 	return Template;
 }

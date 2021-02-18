@@ -63,7 +63,7 @@ function Init(AvailableAction InAction, int NewTargetIndex)
 	DirectSelectNearestTarget();
 }
 
-private function DirectSelectNearestTarget()
+function DirectSelectNearestTarget()
 {
 	local XComGameStateHistory History;
 	local XComWorldData WorldData;

@@ -2,7 +2,7 @@ class X2DownloadableContentInfo_WotCSamuraiClass extends X2DownloadableContentIn
 	config(SamuraiClass);
 
 var config array<Name> IgnoreAbilitiesForShinigami;
-
+var config bool bBladestormNoReactionFireMalus;
 /// <summary>
 /// Called after the Templates have been created (but before they are validated) while this DLC / Mod is installed.
 /// </summary>
@@ -10,10 +10,37 @@ static event OnPostTemplatesCreated()
 {
 	LogCrossClassAbilities();
 	//AddSecondaryThrowingKnives();
-	PatchAbilitiesForShinigami();
+	PatchAbilities();
+
+	AddSoldierIntroMap();
 }
 
-static function PatchAbilitiesForShinigami()
+static event AddSoldierIntroMap()
+{
+	local X2StrategyElementTemplateManager StratMgr;
+	local X2FacilityTemplate FacilityTemplate;
+	local AuxMapInfo MapInfo;
+	local array<X2DataTemplate> AllHangarTemplates;
+	local X2DataTemplate Template;
+
+	// Grab manager
+	StratMgr = class'X2StrategyElementTemplateManager'.static.GetStrategyElementTemplateManager();
+
+	// Find all armory/hangar templates
+	StratMgr.FindDataTemplateAllDifficulties('Hangar', AllHangarTemplates);
+
+	foreach AllHangarTemplates(Template)
+	{
+		// Add Aux Maps to the template
+		FacilityTemplate = X2FacilityTemplate(Template);
+		MapInfo.MapName = "CIN_SoldierIntros_Samurai";
+		MapInfo.InitiallyVisible = true;
+		FacilityTemplate.AuxMaps.AddItem(MapInfo);
+	}
+}
+
+
+static function PatchAbilities()
 {
 	local array<name> TemplateNames;
 	local array<X2AbilityTemplate> AbilityTemplates;
@@ -22,7 +49,6 @@ static function PatchAbilitiesForShinigami()
 	local X2AbilityTemplate AbilityTemplate;
 	local X2AbilityCost Cost;
 	local X2AbilityCost_ActionPoints ActionPointCost;
-
 
 	AbilityMgr = class'X2AbilityTemplateManager'.static.GetAbilityTemplateManager();
 	AbilityMgr.GetTemplateNames(TemplateNames);
@@ -51,6 +77,15 @@ static function PatchAbilitiesForShinigami()
 			}
 		}
 	}
+
+	if (default.bBladestormNoReactionFireMalus)
+	{
+		AbilityMgr.FindAbilityTemplateAllDifficulties('BladestormAttack', AbilityTemplates);
+		foreach AbilityTemplates(AbilityTemplate)
+		{
+			X2AbilityToHitCalc_StandardMelee(AbilityTemplate.AbilityToHitCalc).bReactionFire = false;
+		}
+	}
 }
 
 static function LogCrossClassAbilities()
@@ -67,7 +102,7 @@ static function LogCrossClassAbilities()
 		Template = TemplateManager.FindAbilityTemplate(TemplateName);
 		if (Template.bCrossClassEligible)
 		{
-			`Log("AWC Ability:" @ TemplateName,, 'SamuraiClass');
+			//`Log("AWC Ability:" @ TemplateName,, 'SamuraiClass');
 		}
 	}
 }
@@ -145,3 +180,8 @@ static function AddSecondaryThrowingKnives()
 
 	ItemTemplateManager.LoadAllContent();
 }
+
+//static function UpdateAnimations(out array<AnimSet> CustomAnimSets, XComGameState_Unit UnitState, XComUnitPawn Pawn)
+//{
+//	`Log(GetFuncName() @ AnimSet(`CONTENT.RequestGameArchetype("SamuraiAnimations.Anims.AS_SwordAssasin")),, 'SamuraiClass');
+//}

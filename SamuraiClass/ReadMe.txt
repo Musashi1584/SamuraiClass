@@ -1,7 +1,7 @@
 ﻿[h1]Samurai Class for WotC[/h1]
 
-The samurais only weapon is the sword (or other melee weapons if you insist).
-To compensate for the missing secondary he starts with two utilty slots.
+The samurais weapon are primary sword, dual swords (or other melee weapons if you insist) or sword and a ballistic shield.
+To compensate for the missing ranged weapon he starts with two utilty slots.
 
 Melee kills build up Focus which can be consumed to activate the samurai's signature ability Shinigami and special melee attacks.
 
@@ -84,5 +84,11 @@ Squaddie: Way of the Samurai, Shinigami, Tactical Rigging
 Class icon by mickthemage. Domo arigato!
 Russian translation by Вecё/\b|й Kpo\/иk and resonansER 
 
-Donations
-[url=https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5PPVEBYPKGKBN]donate link[/url]
+Mod troubleshooting
+https://www.reddit.com/r/xcom2mods/wiki/mod_troubleshooting
+
+[h1]Patreon[/h1]
+Have look at my work in progress and infos on my mods at my patreon page.
+Your really like my mods and would like to help me have more time for modding? Consider become a patreon :)
+
+https://www.patreon.com/musashi1584

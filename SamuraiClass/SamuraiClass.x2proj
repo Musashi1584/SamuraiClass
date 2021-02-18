@@ -34,6 +34,12 @@ tags=soldier class, primary melee, war of the chosen, samurai</Description>
     <Content Include="Config\XComSamuraiClass.ini">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Content\CIN_SoldierIntros_Samurai.umap">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\CIN_SoldierIntros_Samurai_VIEWER.umap">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Content\SamuraiAnimations.upk">
       <SubType>Content</SubType>
     </Content>
@@ -91,9 +97,6 @@ tags=soldier class, primary melee, war of the chosen, samurai</Description>
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WotCSamuraiClass\Classes\SamuraiClass_TargetingMethod_MeleeAOE.uc">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Src\WotCSamuraiClass\Classes\SamuraiClass_UIScreenListener.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\WotCSamuraiClass\Classes\X2Condition_CoupDeGrace.uc">
